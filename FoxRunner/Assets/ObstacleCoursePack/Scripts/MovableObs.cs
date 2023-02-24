@@ -9,7 +9,9 @@ public class MovableObs : MonoBehaviour
 	public static float speed = 3f;
 	public float offset = 0f; // kezdőpozíció
 
-	public static bool isForward = true;
+	public GameObject Player;
+
+	public bool isForward = true;
 	private Vector3 startPos;
    
     void Awake()
@@ -67,4 +69,5 @@ public class MovableObs : MonoBehaviour
 			}
 		}
     }
+
 }

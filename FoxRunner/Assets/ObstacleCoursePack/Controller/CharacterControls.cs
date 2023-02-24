@@ -53,6 +53,7 @@ public class CharacterControls : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
+		
 		if (canMove)
 		{
 			if (moveDir.x != 0 || moveDir.z != 0)
@@ -78,9 +79,10 @@ public class CharacterControls : MonoBehaviour {
 				Vector3 velocity = rb.velocity;
 				if (targetVelocity.magnitude < velocity.magnitude) // Ha lassítunk a karakterrel.
 				{
-					animator.SetBool("isRunning", false);
+					
 					targetVelocity = velocity;
 					rb.velocity /= 1.1f;
+					
 				}
 				Vector3 velocityChange = (targetVelocity - velocity);
 				velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
@@ -90,11 +92,12 @@ public class CharacterControls : MonoBehaviour {
 				{
 					if (Mathf.Abs(rb.velocity.magnitude) < speed * 1.0f)
 						rb.AddForce(velocityChange, ForceMode.VelocityChange);
+					
 				}
 				else if (Mathf.Abs(rb.velocity.magnitude) < speed * 1.0f)
 				{
 					rb.AddForce(moveDir * 0.15f, ForceMode.VelocityChange);
-					//Debug.Log(rb.velocity.magnitude);
+					Debug.Log(rb.velocity.magnitude);
 				}
 
 				// Ugrás
@@ -133,10 +136,17 @@ public class CharacterControls : MonoBehaviour {
 	private void Update()
 	{
 
-		if (Input.GetKeyDown(KeyCode.W))
+		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
 		{
 			animator.SetTrigger("Run");
 		}
+		
+
+
+		/*if (Input.GetKeyUp(KeyCode.W))
+		{
+			rb.velocity.magnitude -= 50.0f;
+		}*/
 
 		if (Input.GetKey(KeyCode.LeftShift))
 		{

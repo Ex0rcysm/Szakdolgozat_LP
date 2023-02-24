@@ -354,6 +354,7 @@
 "Assets/ObstacleCoursePack/Scripts/FPSDisplay.cs"
 "Assets/ObstacleCoursePack/Scripts/KillZone.cs"
 "Assets/ObstacleCoursePack/Scripts/MovableObs.cs"
+"Assets/ObstacleCoursePack/Scripts/MovingWall.cs"
 "Assets/ObstacleCoursePack/Scripts/Pendulum.cs"
 "Assets/ObstacleCoursePack/Scripts/Rotator.cs"
 "Assets/ObstacleCoursePack/Scripts/SavePos.cs"
